@@ -259,6 +259,8 @@ while [[ $# -gt 0 ]]; do
             # install the python packages in IsaacLab/source directory
             echo "[INFO] Installing extensions inside the Isaac Lab repository..."
             python_exe=$(extract_python_exe)
+            echo -e "[ERR111OR] Unable to find the Isaac Sim directory: '${python_exe}'"
+
             # recursively look into directories and install them
             # this does not check dependencies between extensions
             export -f extract_python_exe
@@ -388,6 +390,7 @@ while [[ $# -gt 0 ]]; do
             python_exe=$(extract_python_exe)
             # install pip packages
             cd ${ISAACLAB_PATH}/docs
+            echo "The value of ISAACLAB_PATH is: $ISAACLAB_PATH"
             ${python_exe} -m pip install -r requirements.txt > /dev/null
             # build the documentation
             ${python_exe} -m sphinx -b html -d _build/doctrees . _build/html
