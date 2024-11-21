@@ -18,7 +18,7 @@ from omni.isaac.lab.utils.assets import ISAACLAB_NUCLEUS_DIR
 
 CENTAURO_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path="/home/rdai-iit.local/projects/IsaacLab/source/extensions/omni.isaac.lab_assets/data/Robots/Centauro/centauro.usd",
+        usd_path="/home/wang/IsaacLab/source/extensions/omni.isaac.lab_assets/data/Robots/Centauro/centauro.usd",
         activate_contact_sensors=False,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
