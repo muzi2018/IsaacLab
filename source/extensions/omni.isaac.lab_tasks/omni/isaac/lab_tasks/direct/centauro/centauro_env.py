@@ -16,16 +16,16 @@ from omni.isaac.lab.terrains import TerrainImporterCfg
 from omni.isaac.lab.utils import configclass
 
 from omni.isaac.lab_tasks.direct.locomotion.locomotion_env import LocomotionEnv
-
+from omni.isaac.lab_assets import H1_CFG
 
 @configclass
-class HumanoidEnvCfg(DirectRLEnvCfg):
+class H1EnvCfg(DirectRLEnvCfg):
     # env
     episode_length_s = 15.0
     decimation = 2
     action_scale = 1.0
-    action_space = 21
-    observation_space = 75
+    action_space = 19
+    observation_space = 69
     state_space = 0
 
     # simulation
@@ -48,29 +48,27 @@ class HumanoidEnvCfg(DirectRLEnvCfg):
     scene: InteractiveSceneCfg = InteractiveSceneCfg(num_envs=4096, env_spacing=4.0, replicate_physics=True)
 
     # robot
-    robot: ArticulationCfg = HUMANOID_CFG.replace(prim_path="/World/envs/env_.*/Robot")
+    robot: ArticulationCfg = H1_CFG.replace(prim_path="/World/envs/env_.*/Robot")
     joint_gears: list = [
-        67.5000,  # lower_waist
-        67.5000,  # lower_waist
-        67.5000,  # right_upper_arm
-        67.5000,  # right_upper_arm
-        67.5000,  # left_upper_arm
-        67.5000,  # left_upper_arm
-        67.5000,  # pelvis
-        45.0000,  # right_lower_arm
-        45.0000,  # left_lower_arm
-        45.0000,  # right_thigh: x
-        135.0000,  # right_thigh: y
-        45.0000,  # right_thigh: z
-        45.0000,  # left_thigh: x
-        135.0000,  # left_thigh: y
-        45.0000,  # left_thigh: z
-        90.0000,  # right_knee
-        90.0000,  # left_knee
-        22.5,  # right_foot
-        22.5,  # right_foot
-        22.5,  # left_foot
-        22.5,  # left_foot
+        50.0,  # left_hip_yaw
+        50.0,  # right_hip_yaw
+        50.0,  # torso
+        50.0,  # left_hip_roll
+        50.0,  # right_hip_roll
+        50.0,  # left_shoulder_pitch
+        50.0,  # right_shoulder_pitch
+        50.0,  # left_hip_pitch
+        50.0,  # right_hip_pitch
+        50.0,  # left_shoulder_roll
+        50.0,  # right_shoulder_roll
+        50.0,  # left_knee
+        50.0,  # right_knee
+        50.0,  # left_shoulder_yaw
+        50.0,  # right_shoulder_yaw
+        50.0,  # left_ankle
+        50.0,  # right_ankle
+        50.0,  # left_elbow
+        50.0,  # right_elbow
     ]
 
     heading_weight: float = 0.5
@@ -88,8 +86,8 @@ class HumanoidEnvCfg(DirectRLEnvCfg):
     contact_force_scale: float = 0.01
 
 
-class HumanoidEnv(LocomotionEnv):
-    cfg: HumanoidEnvCfg
+class H1Env(LocomotionEnv):
+    cfg: H1EnvCfg
 
-    def __init__(self, cfg: HumanoidEnvCfg, render_mode: str | None = None, **kwargs):
+    def __init__(self, cfg: H1EnvCfg, render_mode: str | None = None, **kwargs):
         super().__init__(cfg, render_mode, **kwargs)
