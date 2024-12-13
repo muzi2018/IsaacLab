@@ -18,8 +18,11 @@ from omni.isaac.lab.utils import configclass
 from omni.isaac.lab_tasks.direct.locomotion.locomotion_env import LocomotionEnv
 from omni.isaac.lab_assets import H1_CFG
 
+
+# ./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Centauro-Direct-v0 --headless
+
 @configclass
-class H1EnvCfg(DirectRLEnvCfg):
+class CentauroEnvCfg(DirectRLEnvCfg):
     # env
     episode_length_s = 15.0
     decimation = 2
@@ -86,8 +89,8 @@ class H1EnvCfg(DirectRLEnvCfg):
     contact_force_scale: float = 0.01
 
 
-class H1Env(LocomotionEnv):
-    cfg: H1EnvCfg
+class CentauroEnv(LocomotionEnv):
+    cfg: CentauroEnvCfg
 
-    def __init__(self, cfg: H1EnvCfg, render_mode: str | None = None, **kwargs):
+    def __init__(self, cfg: CentauroEnvCfg, render_mode: str | None = None, **kwargs):
         super().__init__(cfg, render_mode, **kwargs)
