@@ -17,7 +17,7 @@ from omni.isaac.lab.utils import configclass
 
 from omni.isaac.lab_tasks.direct.locomotion.locomotion_env import LocomotionEnv
 from omni.isaac.lab_assets import H1_CFG
-
+from omni.isaac.lab_assets import centauro
 
 # ./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Centauro-Direct-v0 --headless
 
