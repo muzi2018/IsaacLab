@@ -26,10 +26,10 @@ class CentauroEnvCfg(DirectRLEnvCfg):
     # env
     episode_length_s = 15.0
     decimation = 2
-    action_scale = 1.0
-    action_space = 19
-    observation_space = 69
-    state_space = 0
+    action_scale = 1.0 
+    action_space = 19 # *!*
+    observation_space = 69 # *!*
+    state_space = 0 # *!*
 
     # simulation
     sim: SimulationCfg = SimulationCfg(dt=1 / 120, render_interval=decimation)
@@ -50,7 +50,7 @@ class CentauroEnvCfg(DirectRLEnvCfg):
     # scene
     scene: InteractiveSceneCfg = InteractiveSceneCfg(num_envs=4096, env_spacing=4.0, replicate_physics=True)
 
-    # robot
+    # robot # *!*
     robot: ArticulationCfg = H1_CFG.replace(prim_path="/World/envs/env_.*/Robot")
     joint_gears: list = [
         50.0,  # left_hip_yaw

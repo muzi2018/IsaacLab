@@ -2,6 +2,7 @@
     "python.analysis.extraPaths": [
       "./extensions/omni.isaac.lab",          // Relative path to the directory
       "./extensions/omni.isaac.lab_tasks",
+      "./extensions/omni.isaac.lab_assets"
     ]
   }
   
