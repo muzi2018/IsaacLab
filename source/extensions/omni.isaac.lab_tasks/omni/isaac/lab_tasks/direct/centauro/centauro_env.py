@@ -14,7 +14,6 @@ from omni.isaac.lab_assets import centauro
 
 from .centauro_env_cfg import CentauroFlatEnvCfg, CentauroRoughEnvCfg
 # ./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Centauro-Direct-v0 --headless
-
 class CentauroEnv(DirectRLEnv):
     cfg: CentauroFlatEnvCfg | CentauroRoughEnvCfg
     
