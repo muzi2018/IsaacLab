@@ -89,9 +89,9 @@ class CentauroFlatEnvCfg(DirectRLEnvCfg):
     # robot  
     robot: ArticulationCfg = CENTAURO_CFG.replace(prim_path="/World/Robot")
     
-    # contact_sensor: ContactSensorCfg = ContactSensorCfg(
-    #     prim_path="/World/envs/env_.*/Robot/.*", history_length=3, update_period=0.005, track_air_time=True
-    # )
+    contact_sensor: ContactSensorCfg = ContactSensorCfg(
+        prim_path="/World/Robot/.*", history_length=3, update_period=0.005, track_air_time=True
+    )
     
 
     # # reward scales
