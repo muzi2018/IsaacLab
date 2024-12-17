@@ -83,6 +83,14 @@ class CentauroEnv(DirectRLEnv):
             height_data = (
                 self._height_scanner.data.pos_w[:, 2].unsqueeze(1) - self._height_scanner.data.ray_hits_w[..., 2] - 0.5
             ).clip(-1.0, 1.0)
+        print(self._robot.data.root_lin_vel_b.shape) # 1, 3
+        print(self._robot.data.root_ang_vel_b.shape) # 1, 3
+        print(self._robot.data.projected_gravity_b) # tensor([[ 0.,  0., -1.]], device='cuda:0')
+        print(self._commands.shape) # 4096, 3
+        print((self._robot.data.joint_pos - self._robot.data.default_joint_pos).shape) # 1, 40
+        print(self._robot.data.joint_vel.shape) # 1, 40
+        print("height_data is ", height_data) # None
+        print("actions are ", self._actions.shape) # 4096, 12
         obs = torch.cat(
             [
                 tensor
@@ -91,15 +99,16 @@ class CentauroEnv(DirectRLEnv):
                     self._robot.data.root_ang_vel_b,
                     self._robot.data.projected_gravity_b,
                     self._commands,
-                    self._robot.data.joint_pos - self._robot.data.default_joint_pos,
-                    self._robot.data.joint_vel,
-                    height_data,
-                    self._actions,
+                    # self._robot.data.joint_pos - self._robot.data.default_joint_pos,
+                    # self._robot.data.joint_vel,
+                    # height_data,
+                    # self._actions,
                 )
                 if tensor is not None
             ],
             dim=-1,
         )
+        print("obs.shape is ", obs.shape)
         observations = {"policy": obs}
         return observations
     
