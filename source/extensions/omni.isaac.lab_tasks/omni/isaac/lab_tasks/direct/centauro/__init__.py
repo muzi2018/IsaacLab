@@ -27,6 +27,7 @@ gym.register(
     },
 )
 print("Gym environemnt ", f"{__name__}.centauro_env:CentauroEnv")
+print("rl_games_cfg_entry_point is ", f"{agents.__name__}:rl_games_flat_ppo_cfg.yaml")
 
 gym.register(
     id="Isaac-Velocity-Rough-Centauro-Direct-v0",
