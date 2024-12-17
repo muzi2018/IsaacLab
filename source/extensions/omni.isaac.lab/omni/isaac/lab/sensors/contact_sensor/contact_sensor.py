@@ -251,11 +251,13 @@ class ContactSensor(SensorBase):
         template_prim_path = self._parent_prims[0].GetPath().pathString
         body_names = list()
         for prim in sim_utils.find_matching_prims(template_prim_path + "/" + leaf_pattern):
+            # print ("prim is ", prim)
             # check if prim has contact reporter API
             if prim.HasAPI(PhysxSchema.PhysxContactReportAPI):
                 prim_path = prim.GetPath().pathString
                 body_names.append(prim_path.rsplit("/", 1)[-1])
         # check that there is at least one body with contact reporter API
+        # print("body_names: ", body_names)
         if not body_names:
             raise RuntimeError(
                 f"Sensor at path '{self.cfg.prim_path}' could not find any bodies with contact reporter API."

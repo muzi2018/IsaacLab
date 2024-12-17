@@ -146,11 +146,16 @@ class randomize_rigid_body_material(ManagerTermBase):
 
         # update material buffer with new samples
         if self.num_shapes_per_body is not None:
+            # print("# events randomize RB material #")
+            # print("self.num_shapes_per_body", self.num_shapes_per_body)
             # sample material properties from the given ranges
             for body_id in self.asset_cfg.body_ids:
                 # obtain indices of shapes for the body
                 start_idx = sum(self.num_shapes_per_body[:body_id])
                 end_idx = start_idx + self.num_shapes_per_body[body_id]
+                # print("body_id : ", body_id)
+                # print("start_idx = ", start_idx)
+                # print("end_idx = ", end_idx)
                 # assign the new materials
                 # material samples are of shape: num_env_ids x total_num_shapes x 3
                 materials[env_ids, start_idx:end_idx] = material_samples[:, start_idx:end_idx]
