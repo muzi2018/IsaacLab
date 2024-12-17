@@ -14,6 +14,7 @@ from omni.isaac.lab.utils import configclass
 # Pre-defined configs
 ##
 from omni.isaac.lab_assets.anymal import ANYMAL_C_CFG  # isort: skip
+from omni.isaac.lab_assets.centauro import CENTAURO_CFG
 from omni.isaac.lab.terrains.config.rough import ROUGH_TERRAINS_CFG  # isort: skip
 
 @configclass
@@ -85,23 +86,25 @@ class CentauroFlatEnvCfg(DirectRLEnvCfg):
     # events
     events: EventCfg = EventCfg()
 
-    # robot
-    robot: ArticulationCfg = ANYMAL_C_CFG.replace(prim_path="/World/envs/env_.*/Robot")
-    contact_sensor: ContactSensorCfg = ContactSensorCfg(
-        prim_path="/World/envs/env_.*/Robot/.*", history_length=3, update_period=0.005, track_air_time=True
-    )
+    # robot  
+    robot: ArticulationCfg = CENTAURO_CFG.replace(prim_path="/World/Robot")
+    
+    # contact_sensor: ContactSensorCfg = ContactSensorCfg(
+    #     prim_path="/World/envs/env_.*/Robot/.*", history_length=3, update_period=0.005, track_air_time=True
+    # )
+    
 
-    # reward scales
-    lin_vel_reward_scale = 1.0
-    yaw_rate_reward_scale = 0.5
-    z_vel_reward_scale = -2.0
-    ang_vel_reward_scale = -0.05
-    joint_torque_reward_scale = -2.5e-5
-    joint_accel_reward_scale = -2.5e-7
-    action_rate_reward_scale = -0.01
-    feet_air_time_reward_scale = 0.5
-    undersired_contact_reward_scale = -1.0
-    flat_orientation_reward_scale = -5.0
+    # # reward scales
+    # lin_vel_reward_scale = 1.0
+    # yaw_rate_reward_scale = 0.5
+    # z_vel_reward_scale = -2.0
+    # ang_vel_reward_scale = -0.05
+    # joint_torque_reward_scale = -2.5e-5
+    # joint_accel_reward_scale = -2.5e-7
+    # action_rate_reward_scale = -0.01
+    # feet_air_time_reward_scale = 0.5
+    # undersired_contact_reward_scale = -1.0
+    # flat_orientation_reward_scale = -5.0
 
 @configclass
 class CentauroRoughEnvCfg(CentauroFlatEnvCfg):

@@ -241,6 +241,7 @@ class SceneEntityCfg:
                 if isinstance(self.body_names, str):
                     self.body_names = [self.body_names]
                 self.body_ids, _ = entity.find_bodies(self.body_names, preserve_order=self.preserve_order)
+                # print("self.body_names = ", self.body_names)
                 # performance optimization (slice offers faster indexing than list of indices)
                 # only all bodies in the entity order are selected
                 if len(self.body_ids) == entity.num_bodies and self.body_names == entity.body_names:

@@ -122,6 +122,9 @@ ANYMAL_C_CFG = ArticulationCfg(
     actuators={"legs": ANYDRIVE_3_LSTM_ACTUATOR_CFG},
     soft_joint_pos_limit_factor=0.95,
 )
+
+print("USD_DIR : ", f"{ISAACLAB_NUCLEUS_DIR}/Robots/ANYbotics/ANYmal-C/anymal_c.usd")
+
 """Configuration of ANYmal-C robot using actuator-net."""
 
 
