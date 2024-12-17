@@ -94,17 +94,17 @@ class CentauroFlatEnvCfg(DirectRLEnvCfg):
     )
     
 
-    # # reward scales
-    # lin_vel_reward_scale = 1.0
-    # yaw_rate_reward_scale = 0.5
-    # z_vel_reward_scale = -2.0
-    # ang_vel_reward_scale = -0.05
-    # joint_torque_reward_scale = -2.5e-5
-    # joint_accel_reward_scale = -2.5e-7
-    # action_rate_reward_scale = -0.01
-    # feet_air_time_reward_scale = 0.5
-    # undersired_contact_reward_scale = -1.0
-    # flat_orientation_reward_scale = -5.0
+    # reward scales
+    lin_vel_reward_scale = 1.0
+    yaw_rate_reward_scale = 0.5
+    z_vel_reward_scale = -2.0
+    ang_vel_reward_scale = -0.05
+    joint_torque_reward_scale = -2.5e-5
+    joint_accel_reward_scale = -2.5e-7
+    action_rate_reward_scale = -0.01
+    feet_air_time_reward_scale = 0.5
+    undersired_contact_reward_scale = -1.0
+    flat_orientation_reward_scale = -5.0
 
 @configclass
 class CentauroRoughEnvCfg(CentauroFlatEnvCfg):
