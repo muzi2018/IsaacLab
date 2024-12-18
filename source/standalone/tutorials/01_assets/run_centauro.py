@@ -43,7 +43,7 @@ from omni.isaac.lab.sim import SimulationContext
 ##
 # Pre-defined configs
 ##
-from omni.isaac.lab_assets import CARTPOLE_CFG  # isort:skip
+from omni.isaac.lab_assets import CENTAURO_CFG  # isort:skip
 
 
 def design_scene() -> tuple[dict, list[list[float]]]:
@@ -64,12 +64,12 @@ def design_scene() -> tuple[dict, list[list[float]]]:
     prim_utils.create_prim("/World/Origin2", "Xform", translation=origins[1])
 
     # Articulation
-    cartpole_cfg = CARTPOLE_CFG.copy()
-    cartpole_cfg.prim_path = "/World/Origin.*/Robot"
-    cartpole = Articulation(cfg=cartpole_cfg)
+    centauro_cfg = CENTAURO_CFG.copy()
+    centauro_cfg.prim_path = "/World/Origin.*/Robot"
+    centauro = Articulation(cfg=centauro_cfg)
 
     # return the scene information
-    scene_entities = {"cartpole": cartpole}
+    scene_entities = {"centauro": centauro}
     return scene_entities, origins
 
 
@@ -78,7 +78,7 @@ def run_simulator(sim: sim_utils.SimulationContext, entities: dict[str, Articula
     # Extract scene entities
     # note: we only do this here for readability. In general, it is better to access the entities directly from
     #   the dictionary. This dictionary is replaced by the InteractiveScene class in the next tutorial.
-    robot = entities["cartpole"]
+    robot = entities["centauro"]
     # Define simulation stepping
     sim_dt = sim.get_physics_dt()
     count = 0
