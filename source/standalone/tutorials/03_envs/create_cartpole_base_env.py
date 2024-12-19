@@ -40,7 +40,6 @@ from omni.isaac.lab.managers import ObservationGroupCfg as ObsGroup
 from omni.isaac.lab.managers import ObservationTermCfg as ObsTerm
 from omni.isaac.lab.managers import SceneEntityCfg
 from omni.isaac.lab.utils import configclass
-
 from omni.isaac.lab_tasks.manager_based.classic.cartpole.cartpole_env_cfg import CartpoleSceneCfg
 
 
