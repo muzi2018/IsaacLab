@@ -53,6 +53,7 @@ Guidelines for modifications:
 * Brian Bingham
 * Cameron Upright
 * Calvin Yu
+* Cathy Y. Li
 * Cheng-Rong Lai
 * Chenyu Yang
 * Connor Smith
@@ -67,6 +68,7 @@ Guidelines for modifications:
 * Gary Lvov
 * Giulio Romualdi
 * Haoran Zhou
+* Harsh Patel
 * HoJin Jeon
 * Hongwei Xiong
 * Hongyu Li
@@ -87,6 +89,7 @@ Guidelines for modifications:
 * Kourosh Darvish
 * Kousheek Chakraborty
 * Lionel Gulich
+* Lotus Li
 * Louis Le Lay
 * Lorenz Wellhausen
 * Lukas Fröhlich
@@ -99,6 +102,7 @@ Guidelines for modifications:
 * Miguel Alonso Jr
 * Mingyu Lee
 * Muhong Guo
+* Neel Anand Jawale
 * Nicola Loi
 * Norbert Cygiert
 * Nuoyan Chen (Alvin)
@@ -108,8 +112,10 @@ Guidelines for modifications:
 * Özhan Özen
 * Patrick Yin
 * Peter Du
+* Philipp Reist
 * Pulkit Goyal
 * Qian Wan
+* Qingyang Jiang
 * Qinxi Yu
 * Rafael Wiltz
 * Renaud Poncelet
@@ -130,6 +136,7 @@ Guidelines for modifications:
 * Vladimir Fokow
 * Wei Yang
 * Xavier Nal
+* Xinjie Yao
 * Xinpeng Liu
 * Yang Jin
 * Yanzi Zhu
@@ -137,6 +144,7 @@ Guidelines for modifications:
 * Yohan Choi
 * Yujian Zhang
 * Yun Liu
+* Zehao Wang
 * Ziqi Fan
 * Zoe McCarthy
 * David Leon
